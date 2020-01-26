@@ -1,0 +1,16 @@
+
+17:53:59.907341 <0.278.0> 'Elixir.SampleProgram':count(10000)
+
+17:54:00.255421 <0.280.0> 'Elixir.SampleProgram':count(10000)
+
+17:54:00.470452 <0.282.0> 'Elixir.SampleProgram':count(10000)
+
+17:54:00.641160 <0.284.0> 'Elixir.SampleProgram':count(10000)
+
+17:54:00.803700 <0.286.0> 'Elixir.SampleProgram':count(10000)
+
+17:54:00.963575 <0.288.0> 'Elixir.SampleProgram':count(10000)
+
+17:54:01.204507 <0.290.0> 'Elixir.SampleProgram':count(10000)
+
+17:54:01.356811 <0.292.0> 'Elixir.SampleProgram':count(10000)

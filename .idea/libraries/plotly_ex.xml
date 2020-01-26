@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="plotly_ex" type="mix">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/_build/dev/lib/plotly_ex/ebin" />
+    </CLASSES>
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/deps/plotly_ex/lib" />
+    </SOURCES>
+  </library>
+</component>

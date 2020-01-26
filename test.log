@@ -1,0 +1,124 @@
+[
+  meta: [
+    registered_name: Mix.TasksServer,
+    dictionary: [
+      "$ancestors": [Mix.Supervisor, #PID<0.108.0>],
+      "$initial_call": {Mix.TasksServer, :"-start_link/1-fun-0-", 0}
+    ],
+    group_leader: #PID<0.107.0>,
+    status: :waiting
+  ],
+  signals: [
+    links: [#PID<0.109.0>],
+    monitors: [],
+    monitored_by: [],
+    trap_exit: false
+  ],
+  location: [
+    initial_call: {:proc_lib, :init_p, 5},
+    current_stacktrace: [
+      {:gen_server, :loop, 7, [file: 'gen_server.erl', line: 394]},
+      {:proc_lib, :init_p_do_apply, 3, [file: 'proc_lib.erl', line: 249]}
+    ]
+  ],
+  memory_used: [
+    memory: 8844,
+    message_queue_len: 0,
+    heap_size: 610,
+    total_heap_size: 986,
+    garbage_collection: [
+      max_heap_size: %{error_logger: true, kill: true, size: 0},
+      min_bin_vheap_size: 46422,
+      min_heap_size: 233,
+      fullsweep_after: 65535,
+      minor_gcs: 7
+    ]
+  ],
+  work: [reductions: 832]
+]
+
+
+iex(1)> Profiler.test
+[
+  meta: [
+    registered_name: [],
+    dictionary: [
+      iex_history: %IEx.History{queue: {[], []}, size: 0, start: 1},
+      "$initial_call": {IEx.Evaluator, :init, 4},
+      iex_server: #PID<0.76.0>,
+      "$ancestors": [#PID<0.76.0>],
+      iex_evaluator: :ack
+    ],
+    group_leader: #PID<0.64.0>,
+    status: :running
+  ],
+  signals: [
+    links: [],
+    monitors: [],
+    monitored_by: [#PID<0.76.0>],
+    trap_exit: false
+  ],
+  location: [
+    initial_call: {:proc_lib, :init_p, 5},
+    current_stacktrace: [
+      {:recon, :proc_info, 2, [file: 'src/recon.erl', line: 235]},
+      {:recon, :info_type, 3, [file: 'src/recon.erl', line: 223]},
+      {:recon, :"-info/1-lc$^0/1-0-", 2, [file: 'src/recon.erl', line: 181]},
+      {:recon, :"-info/1-lc$^0/1-0-", 2, [file: 'src/recon.erl', line: 181]},
+      {:erl_eval, :do_apply, 6, [file: 'erl_eval.erl', line: 680]},
+      {:elixir, :eval_forms, 4, [file: 'src/elixir.erl', line: 275]},
+      {IEx.Evaluator, :handle_eval, 5,
+       [file: 'lib/iex/evaluator.ex', line: 257]}
+    ]
+  ],
+  memory_used: [
+    memory: 16780,
+    message_queue_len: 0,
+    heap_size: 1598,
+    total_heap_size: 1974,
+    garbage_collection: [
+      max_heap_size: %{error_logger: true, kill: true, size: 0},
+      min_bin_vheap_size: 46422,
+      min_heap_size: 233,
+      fullsweep_after: 65535,
+      minor_gcs: 9
+    ]
+  ],
+  work: [reductions: 2177]
+]
+
+iex(1)> Profiler.test
+[
+  meta: [
+    registered_name: [],
+    dictionary: [],
+    group_leader: #PID<0.64.0>,
+    status: :waiting
+  ],
+  signals: [
+    links: [],
+    monitors: [],
+    monitored_by: [#PID<0.188.0>],
+    trap_exit: false
+  ],
+  location: [
+    initial_call: {SampleProgram, :sleep, 1},
+    current_stacktrace: [
+      {Process, :sleep, 1, [file: 'lib/process.ex', line: 250]}
+    ]
+  ],
+  memory_used: [
+    memory: 2748,
+    message_queue_len: 0,
+    heap_size: 233,
+    total_heap_size: 233,
+    garbage_collection: [
+      max_heap_size: %{error_logger: true, kill: true, size: 0},
+      min_bin_vheap_size: 46422,
+      min_heap_size: 233,
+      fullsweep_after: 65535,
+      minor_gcs: 0
+    ]
+  ],
+  work: [reductions: 22]
+]

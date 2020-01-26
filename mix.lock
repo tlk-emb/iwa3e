@@ -1,0 +1,6 @@
+%{
+  "jason": {:hex, :jason, "1.1.2", "b03dedea67a99223a2eaf9f1264ce37154564de899fd3d8b9a21b1a6fd64afe7", [:mix], [{:decimal, "~> 1.0", [hex: :decimal, repo: "hexpm", optional: true]}], "hexpm"},
+  "observer_cli": {:hex, :observer_cli, "1.5.3", "d42e20054116c49d5242d3ff9e1913acccebe6015f449d6e312a5bc160e79a62", [:mix, :rebar3], [{:recon, "~>2.5.0", [hex: :recon, repo: "hexpm", optional: false]}], "hexpm"},
+  "plotly_ex": {:git, "https://github.com/s417-lama/plotly_ex.git", "134219117848339cb2ec734fc0d561b6efedd311", []},
+  "recon": {:hex, :recon, "2.5.0", "2f7fcbec2c35034bade2f9717f77059dc54eb4e929a3049ca7ba6775c0bd66cd", [:mix, :rebar3], [], "hexpm"},
+}
