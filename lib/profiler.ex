@@ -4,12 +4,39 @@ defmodule Profiler do
 
   observed_pids = []
 
-  def test(_class) do
-#    :recon.info(self)
-#    {id, _} = spawn_monitor(SampleProgram, :sleep, [3000])
-#    {_class, method, a} = :recon.info(id)[:location][:initial_call]
-    :erlang.processes()
-      |> Enum.filter(fn x -> elem(:recon.info(x)[:location][:initial_call], 0) == _class end)
+  def start_dump(file_name, interval_ms \\ 1000) do
+    spawn_link(Profiler, :dump_processes_info, [file_name, interval_ms])
+  end
+
+  def end_dump(_pid) do
+    Process.exit(_pid, :normal)
+  end
+
+  def dump_processes_info(file_name, interval_ms) do
+    Stream.interval(interval_ms)
+      |> Stream.flat_map(fn _ -> ["Time: " <> Timex.format!(Timex.local, "{ISO:Extended}") <> "\n"] ++ processes_info end)
+      |> Stream.map(fn info ->
+          if is_bitstring(info) do
+            info
+          else
+            "#{inspect(info[:_pid])}&&#{inspect(info[:initial_call])}&&#{inspect(info[:memory])}&&#{inspect(info[:reductions])}&&#{inspect(info[:stacktrace])}\n"
+          end
+        end)
+      |> Stream.into(File.stream!(file_name, [:append]))
+      |> Stream.run
+  end
+
+  def processes_info() do
+    Process.list
+      |> Enum.map(fn x -> [_pid: x, info: :recon.info(x)] end)
+      |> Enum.map(fn x ->
+        [
+          _pid: x[:_pid],
+          initial_call: x[:info][:location][:initial_call],
+          memory: x[:info][:memory_used][:memory],
+          reductions: x[:info][:work][:reductions],
+          stacktrace: Enum.at(x[:info][:location][:current_stacktrace], 0)
+        ] end)
   end
 
   def parse(pids) do
@@ -67,10 +94,7 @@ defmodule Profiler do
   end
 
   def start(_class, func, args) do
-#    Profiler.show_child_processes(ElixirProfiler.SampleProgram.count_up(98).self())
     {id, ref} = spawn_monitor(_class, func, args)
-
-#    :recon_trace.calls({SampleProgram, :_, fn _ -> :ok end}, 100, [io_server: id])
 
     IO.puts("Target Process ID: " <> inspect(id))
 
@@ -102,29 +126,8 @@ defmodule Profiler do
     File.write(@log_path, "Memory Used: #{to_string(:recon.info(id)[:memory_used][:memory])} Bytes #{pid_datetime_to_string(id)}\n", [:append])
   end
 
-  def count_up(n) when n < 10 do
-    IO.inspect(n)
-    Process.sleep(1000)
-#    IO.inspect(:recon.info(self))
-
-    IO.inspect(spawn(Profiler, :fib, [20]))
-    count_up(n+1)
-  end
-
-  def count_up(_) do
-    IO.puts("Finish Counting!")
-  end
-
   def pid_datetime_to_string(id) do
     inspect(id) <> " " <> to_string(DateTime.utc_now)
   end
-
-  def fib(n) when n > 1 do
-    spawn_link(Profiler, :fib, [1])
-    IO.inspect(:recon.info(self()))
-    fib(n-1) + fib(n-2)
-  end
-
-  def fib(_) do 1 end
 
 end

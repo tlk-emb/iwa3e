@@ -22,8 +22,10 @@ defmodule ElixirProfiler.MixProject do
   defp deps do
     [
       {:recon, "~> 2.5"},
-      {:plotly_ex, git: "https://github.com/s417-lama/plotly_ex.git"},
       {:observer_cli, "~> 1.5"},
+      {:timex, "~> 3.5"},
+      {:chartkick, "~>0.4.0"},
+      {:poison, "~>3.1"},
     ]
   end
 end

@@ -1,0 +1,17 @@
+.chart {
+  text-align: center;
+}
+
+.MuiSlider-root {
+  width: 40% !important;
+  margin-top: 32px;
+}
+
+.menu {
+  width: 30%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  flex-direction: row;
+}

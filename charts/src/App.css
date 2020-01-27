@@ -1,0 +1,8 @@
+@import url(http://fonts.googleapis.com/earlyaccess/notosansjp.css);
+
+.App {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: "NotoSansCJKjp";
+}
