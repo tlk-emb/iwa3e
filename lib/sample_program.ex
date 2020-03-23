@@ -1,21 +1,25 @@
 defmodule SampleProgram do
 
-  def count(n) when n > 0 do
+  def make_list_pow(n) when n <= 0 do
+    [0]
+  end
+
+  def make_list_pow(n) do
     Process.sleep(1)
-    1 + count(n-1)
+    make_list_pow(n-1) ++ make_list_pow(n-1)
   end
 
-  def count(n) do 1 end
-
-  def spawn_processes(n) when n > 0 do
-    spawn_link(SampleProgram, :sleep, [3000])
-    spawn_processes(n-1)
+  def make_list_pow2(n) do
+    make_list_pow2_loop(round(:math.pow(2, n)))
   end
 
-  def spawn_processes(n) do end
+  def make_list_pow2_loop(n) when n <= 0 do
+    [0]
+  end
 
-  def sleep(n) do
-    Process.sleep(n)
+  def make_list_pow2_loop(n) do
+    Process.sleep(1)
+    make_list_pow2_loop(n-1) ++ [0]
   end
 
 end

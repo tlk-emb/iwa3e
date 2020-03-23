@@ -255,7 +255,7 @@ const Chart: React.FC = () => {
 
   return (
     <div className="chart">
-      <h2>Chart</h2>
+      <h2>IoT Memory Visualization</h2>
       <div className="menu">
         <form onSubmit={event => filter(event)}>
           <TextField

@@ -2,37 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9df6797a-e5e3-4b61-b4b6-4c89071a2f63" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/benchfella.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/certifi.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/chartkick.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/combine.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/dialyxir.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/earmark.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/ex_doc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/excoveralls.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/exjsx.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/gettext.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/hackney.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/idna.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/jazz.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/jiffy.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/json.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/metrics.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/mimerl.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/parse_trans.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/poison.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/ssl_verify_fun.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/stream_data.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/timex.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/tzdata.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/unicode_util_compat.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/uuid.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/elixir_profiler.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/elixir_profiler.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/charts/src/Chart.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/charts/src/Chart.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/profiler.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/profiler.ex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/visualizer.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/visualizer.ex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mix.exs" beforeDir="false" afterPath="$PROJECT_DIR$/mix.exs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mix.lock" beforeDir="false" afterPath="$PROJECT_DIR$/mix.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/sample_program.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/sample_program.ex" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/assets/node_modules/phoenix/" />
     <ignored path="$PROJECT_DIR$/assets/node_modules/phoenix_html/" />
@@ -48,20 +21,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/lib/profiler.ex">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2646">
-              <caret line="126" column="5" selection-start-line="126" selection-start-column="5" selection-end-line="126" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/visualizer.ex">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="146">
-              <caret line="87" selection-start-line="87" selection-end-line="87" />
+        <entry file="file://$PROJECT_DIR$/dump.log">
+          <provider selected="true" editor-type-id="LogFileEditorProvider">
+            <state relative-caret-position="231">
+              <caret line="11" column="72" selection-start-line="11" selection-start-column="72" selection-end-line="11" selection-end-column="72" />
             </state>
           </provider>
         </entry>
@@ -69,28 +33,24 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/sample_program.ex">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="10" column="30" selection-start-line="10" selection-start-column="30" selection-end-line="10" selection-end-column="30" />
+            <state relative-caret-position="504">
+              <caret line="24" column="3" lean-forward="true" selection-start-line="24" selection-start-column="3" selection-end-line="24" selection-end-column="3" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/lib/profiler.ex">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-793">
+              <caret line="2" selection-start-line="2" selection-end-line="4" selection-end-column="5" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dump.log">
-          <provider selected="true" editor-type-id="LogFileEditorProvider">
-            <state relative-caret-position="252">
-              <caret line="12" column="35" lean-forward="true" selection-start-line="12" selection-start-column="35" selection-end-line="12" selection-end-column="35" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dumped.log">
-          <provider selected="true" editor-type-id="LogFileEditorProvider">
-            <state relative-caret-position="2218839">
-              <caret line="105659" column="49" selection-start-line="105659" selection-start-column="49" selection-end-line="105659" selection-end-column="50" />
-            </state>
-          </provider>
+        <entry file="file://$PROJECT_DIR$/charts/public/dumped.log">
+          <provider selected="true" editor-type-id="LogFileEditorProvider" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -114,8 +74,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mix.exs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="567">
-              <caret line="27" column="22" selection-start-line="27" selection-start-column="22" selection-end-line="27" selection-end-column="22" />
+            <state relative-caret-position="210">
+              <caret line="10" column="5" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -147,6 +107,10 @@
       <find>SampleProgram</find>
       <find>,</find>
       <find>Sample</find>
+      <find>log&quot;</find>
+      <find>12</find>
+      <find>Time</find>
+      <find>39:46</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -160,22 +124,21 @@
         <option value="$PROJECT_DIR$/priv/sample_program.ex" />
         <option value="$PROJECT_DIR$/priv/profiler.ex" />
         <option value="$PROJECT_DIR$/process.log" />
-        <option value="$PROJECT_DIR$/lib/sample_program.ex" />
         <option value="$PROJECT_DIR$/test.log" />
         <option value="$PROJECT_DIR$/recon.log" />
         <option value="$PROJECT_DIR$/mix.exs" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/test.html" />
         <option value="$PROJECT_DIR$/lib/visualizer.ex" />
+        <option value="$PROJECT_DIR$/lib/sample_program.ex" />
         <option value="$PROJECT_DIR$/lib/profiler.ex" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-1" />
     <option name="y" value="23" />
     <option name="width" value="1440" />
-    <option name="height" value="814" />
+    <option name="height" value="823" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -190,6 +153,17 @@
             <path>
               <item name="elixir_profiler" type="b2602c69:ProjectViewProjectNode" />
               <item name="elixir_profiler" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="elixir_profiler" type="b2602c69:ProjectViewProjectNode" />
+              <item name="elixir_profiler" type="462c0819:PsiDirectoryNode" />
+              <item name="charts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="elixir_profiler" type="b2602c69:ProjectViewProjectNode" />
+              <item name="elixir_profiler" type="462c0819:PsiDirectoryNode" />
+              <item name="charts" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="elixir_profiler" type="b2602c69:ProjectViewProjectNode" />
@@ -258,22 +232,25 @@
       <workItem from="1579691526031" duration="8485000" />
       <workItem from="1579844245862" duration="13655000" />
       <workItem from="1579865981451" duration="23365000" />
-      <workItem from="1580112343509" duration="1930000" />
+      <workItem from="1580112343509" duration="4342000" />
+      <workItem from="1580137324090" duration="3143000" />
+      <workItem from="1580309512865" duration="23373000" />
+      <workItem from="1581583356563" duration="816000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="75855000" />
+    <option name="totallyTimeSpent" value="105599000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="23" width="1440" height="814" extended-state="0" />
+    <frame x="0" y="23" width="1440" height="823" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27110156" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28183118" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49928468" weight="0.3286119" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49928468" weight="0.3272727" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -282,7 +259,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info active="true" anchor="bottom" x="0" y="45" width="1440" height="792" id="Terminal" maximized="true" order="10" sideWeight="0.49499285" visible="true" weight="0.32577905" />
+      <window_info anchor="bottom" x="0" y="45" width="1440" height="792" id="Terminal" maximized="true" order="10" sideWeight="0.49499285" weight="0.32447553" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50500715" side_tool="true" weight="0.29461756" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -308,20 +285,9 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/trace.log" />
-    <entry file="file://$PROJECT_DIR$/lib/elixir_profiler.ex">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/process1.log" />
     <entry file="file://$PROJECT_DIR$/dump" />
-    <entry file="file://$PROJECT_DIR$/output.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-236599" />
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/output.txt" />
     <entry file="file://$PROJECT_DIR$/etop.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -332,13 +298,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2163">
-          <caret line="103" column="24" selection-start-line="103" selection-start-column="24" selection-end-line="103" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/test.html" />
     <entry file="file://$PROJECT_DIR$/process.log">
       <provider selected="true" editor-type-id="LogFileEditorProvider">
         <state relative-caret-position="3150">
@@ -351,12 +311,44 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/stack.log" />
+    <entry file="file://$PROJECT_DIR$/lib/visualizer.ex">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1827">
+          <caret line="87" selection-start-line="87" selection-end-line="87" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/dumped.log">
       <provider selected="true" editor-type-id="LogFileEditorProvider">
         <state relative-caret-position="2218839">
           <caret line="105659" column="49" selection-start-line="105659" selection-start-column="49" selection-end-line="105659" selection-end-column="50" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/elixir_profiler.ex">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/charts/public/dump.log">
+      <provider selected="true" editor-type-id="LogFileEditorProvider">
+        <state relative-caret-position="399">
+          <caret line="19" column="83" selection-start-line="19" selection-start-column="82" selection-end-line="19" selection-end-column="83" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dump.log">
+      <provider selected="true" editor-type-id="LogFileEditorProvider">
+        <state relative-caret-position="231">
+          <caret line="11" column="72" selection-start-line="11" selection-start-column="72" selection-end-line="11" selection-end-column="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/charts/public/dumped.log">
+      <provider selected="true" editor-type-id="LogFileEditorProvider" />
     </entry>
     <entry file="file://$PROJECT_DIR$/sample.log">
       <provider selected="true" editor-type-id="LogFileEditorProvider">
@@ -374,8 +366,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mix.exs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="567">
-          <caret line="27" column="22" selection-start-line="27" selection-start-column="22" selection-end-line="27" selection-end-column="22" />
+        <state relative-caret-position="210">
+          <caret line="10" column="5" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -389,38 +381,17 @@
     <entry file="file://$PROJECT_DIR$/test/elixir_profiler_test.exs">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/stack.log">
-      <provider selected="true" editor-type-id="LogFileEditorProvider">
-        <state relative-caret-position="169">
-          <caret line="2941" column="24" selection-start-line="2941" selection-start-column="24" selection-end-line="2941" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dump.log">
-      <provider selected="true" editor-type-id="LogFileEditorProvider">
-        <state relative-caret-position="252">
-          <caret line="12" column="35" lean-forward="true" selection-start-line="12" selection-start-column="35" selection-end-line="12" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/visualizer.ex">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="146">
-          <caret line="87" selection-start-line="87" selection-end-line="87" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/sample_program.ex">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="10" column="30" selection-start-line="10" selection-start-column="30" selection-end-line="10" selection-end-column="30" />
+        <state relative-caret-position="504">
+          <caret line="24" column="3" lean-forward="true" selection-start-line="24" selection-start-column="3" selection-end-line="24" selection-end-column="3" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/profiler.ex">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2646">
-          <caret line="126" column="5" selection-start-line="126" selection-start-column="5" selection-end-line="126" selection-end-column="5" />
+        <state relative-caret-position="-793">
+          <caret line="2" selection-start-line="2" selection-end-line="4" selection-end-column="5" />
         </state>
       </provider>
     </entry>

@@ -1,20 +1,28 @@
 defmodule Profiler do
 
-  @log_path "process.log"
-
-  observed_pids = []
-
-  def start_dump(file_name, interval_ms \\ 1000) do
-    spawn_link(Profiler, :dump_processes_info, [file_name, interval_ms])
+  def start_dump(receiver_pid, interval_ms \\ 5000) do
+    spawn_monitor(Profiler, :dump_processes_info, [receiver_pid, interval_ms])
   end
 
   def end_dump(_pid) do
-    Process.exit(_pid, :normal)
+    Process.exit(_pid, :kill)
   end
 
-  def dump_processes_info(file_name, interval_ms) do
+  def receive_write() do
+    receive do
+      msg -> File.write("./charts/public/dump.log", msg, [:append])
+             receive_write
+    end
+  end
+
+  def receive_dump() do
+    File.rm("./charts/public/dump.log")
+    spawn(Profiler, :receive_write, [])
+  end
+
+  def dump_processes_info(receiver_pid, interval_ms \\ 5000, _pid \\ nil) do
     Stream.interval(interval_ms)
-      |> Stream.flat_map(fn _ -> ["Time: " <> Timex.format!(Timex.local, "{ISO:Extended}") <> "\n"] ++ processes_info end)
+      |> Stream.flat_map(fn _ -> ["Time: " <> Timex.format!(Timex.now, "{ISO:Extended}") <> "\n"] ++ processes_info(_pid) end)
       |> Stream.map(fn info ->
           if is_bitstring(info) do
             info
@@ -22,12 +30,12 @@ defmodule Profiler do
             "#{inspect(info[:_pid])}&&#{inspect(info[:initial_call])}&&#{inspect(info[:memory])}&&#{inspect(info[:reductions])}&&#{inspect(info[:stacktrace])}\n"
           end
         end)
-      |> Stream.into(File.stream!(file_name, [:append]))
+      |> Stream.each(fn x -> send receiver_pid, x end)
       |> Stream.run
   end
 
-  def processes_info() do
-    Process.list
+  def processes_info(_pid \\ nil) do
+    if (_pid == nil) do Process.list else [_pid] end
       |> Enum.map(fn x -> [_pid: x, info: :recon.info(x)] end)
       |> Enum.map(fn x ->
         [
@@ -37,6 +45,19 @@ defmodule Profiler do
           reductions: x[:info][:work][:reductions],
           stacktrace: Enum.at(x[:info][:location][:current_stacktrace], 0)
         ] end)
+  end
+
+  def start(_class, func, args, receiver_pid, interval_ms \\ 1000) do
+    {id, ref} = spawn_monitor(_class, func, args)
+
+    profiler_pid = spawn(Profiler, :dump_processes_info, [receiver_pid, interval_ms, id])
+
+    receive do
+      {:DOWN, ref, process, _pid, reason} ->
+        Process.demonitor(ref)
+        Profiler.end_dump(profiler_pid)
+        IO.write("{#{inspect(_class)}, #{inspect(func)}, #{inspect(args)}} has Ended.")
+    end
   end
 
   def parse(pids) do
@@ -66,68 +87,4 @@ defmodule Profiler do
 
     {time, _pid, info}
   end
-
-  def receive_info() do
-    receive do
-      {:io_request, id, ref, data} -> IO.inspect(data)
-    end
-  end
-
-  def observe(_pid) do
-    File.write(@log_path, "Start #{pid_datetime_to_string(_pid)}\n", [:append])
-
-    Process.monitor(_pid)
-
-    IO.puts("Profiler Process ID: " <> inspect(self))
-    spawn(Profiler, :monitor_memory_use, [_pid])
-
-    receive do
-      {:DOWN, ref, process, _pid, reason} ->
-        Process.demonitor(ref)
-        IO.inspect(_pid)
-        IO.puts("#{pid_datetime_to_string(_pid)} Process Down! reason: #{reason}")
-        File.write(@log_path, "End #{pid_datetime_to_string(_pid)}\n", [:append])
-      {:io_request, _pid, _, {_}} -> File.write("trace.log", inspect(_pid), [:append])
-      {_} ->
-        IO.puts("some message")
-    end
-  end
-
-  def start(_class, func, args) do
-    {id, ref} = spawn_monitor(_class, func, args)
-
-    IO.puts("Target Process ID: " <> inspect(id))
-
-    File.write(@log_path, "Start #{pid_datetime_to_string(id)}\n", [:append])
-
-    IO.puts("Profiler Process ID: " <> inspect(self))
-    spawn(Profiler, :monitor_memory_use, [id])
-
-    receive do
-      {:DOWN, ref, process, _pid, reason} ->
-        Process.demonitor(ref)
-        IO.inspect(_pid)
-        IO.puts("#{pid_datetime_to_string(id)} Process Down! reason: #{reason}")
-        File.write(@log_path, "End #{pid_datetime_to_string(id)}\n", [:append])
-      {:io_request, _pid, _, {_}} -> File.write("trace.log", inspect(_pid), [:append])
-      {_} ->
-        IO.puts("some message")
-    end
-  end
-
-  def monitor_memory_use(id) do
-    Stream.interval(1000)
-    |> Stream.filter(fn _ -> Process.alive?(id) end)
-    |> Stream.map(fn _ -> write_memory_usage(id) end)
-    |> Enum.take_while(fn _ -> Process.alive?(id) end)
-  end
-
-  def write_memory_usage(id) do
-    File.write(@log_path, "Memory Used: #{to_string(:recon.info(id)[:memory_used][:memory])} Bytes #{pid_datetime_to_string(id)}\n", [:append])
-  end
-
-  def pid_datetime_to_string(id) do
-    inspect(id) <> " " <> to_string(DateTime.utc_now)
-  end
-
 end
